@@ -1,6 +1,8 @@
 % DESCRIPTION
 % Assemble OSHD data into NetCDF in Surfex forcing format 
 % GM march 2023
+% TO DO: Convert to function, with area, yeartag, paths and coors as
+% arguments
 
 % FILE AND PATH DEFS + SOME MANUAL STUFF
 % ok, we need a few sources of infos: 
@@ -8,17 +10,17 @@
 area = 'DVXA'; 
 yeartag = '2021-22'; 
 nc_tmpl_file = 'FORCING_test_2d.nc'; 
-nc_out_file  = ['FORCING_oshd_' area '_' yeartag 'cor.nc']; 
-lus_file = ['BAFU_LUS_0250_2023a_' area '.mat']; 
-data_path = ['D:\METEO_DATA\OSHD2SURFEX\' area '_2022']; 
+nc_out_file  = ['FORCING_oshd_' area '_' yeartag '.nc']; 
+lus_file = ['H:\PD_CEN\FSM-Surfex-scripts\BAFU_LUS_0250_2023a_' area '.mat']; 
+data_path = ['D:\METEO_DATA\OSHD2SURFEX\' area '_' yeartag]; 
 
 % domain characterization, pending better solution 
 % MORX coordinates
-xllcoor_custom = 543000; % coordinates need to be compatible with input LUS file
-yllcoor_custom = 111000; 
+%xllcoor_custom = 543000; % coordinates need to be compatible with input LUS file
+%yllcoor_custom = 111000; 
 % DVXA coordinates
-% xllcoor_custom = 761000;
-% yllcoor_custom = 166000; 
+xllcoor_custom = 761000;
+yllcoor_custom = 166000; 
 
 % GET DATA STRUCTURE FROM TEMPLATE AND LUS
 % create handle to obtain info on target netcdf file

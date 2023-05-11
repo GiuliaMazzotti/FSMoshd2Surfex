@@ -2,14 +2,14 @@
 % Script to assemble meteo forcing from OSHD system for use with
 % Surfex/MEB/Crocus
 % GM, march 2023
-% to do: convert to function, add dpcu
+% to do: convert to function, add docus
 
 % PATH DEFS & SETTINGS
 % Period definition
 date_start= '202109010600'; 
 date_end = '202209010500'; 
 
-area = 'MORX'; 
+area = 'DVXA'; 
 yeartag = [date_start(1:4) '-' date_end(3:4)]; 
 
 % Path definition for meteo data from COSMO, constrain period
@@ -17,8 +17,8 @@ cpath = 'K:\DATA_COSMO\OUTPUT_GRID_OSHD_0250\PROCESSED_ANALYSIS\COSMO_1EFA\';
 %cpath = 'I:\DATA_COSMO\OUTPUT_GRID_OSHD_0250\PROCESSED_ANALYSIS\COSMO_1_FA\'; 
 
 % Path def for meteo data from FSM output
-fpath = 'D:\MODEL_DATA_FSM\FSM_HS\GRIDDED_RUNS_TO_STORE\OUTPUT_GRID_0250\RESULTS_01h_opn\'; 
-%fpath = 'Z:\OSHD\FSM_RUNS\FSM_MAIN\FSM_HS\LATEST_00h_RUN\OUTPUT_GRID_0250\RESULTS_01h_opn\'; 
+%fpath = 'D:\MODEL_DATA_FSM\FSM_HS\GRIDDED_RUNS_TO_STORE\OUTPUT_GRID_0250\RESULTS_01h_opn\'; 
+fpath = 'Z:\OSHD\FSM_RUNS\FSM_MAIN\FSM_HS\LATEST_00h_RUN\OUTPUT_GRID_0250\RESULTS_01h_opn\'; 
 
 % LUS file containing cropped ROI 
 lus_file = ['H:\PD_CEN\FSM-Surfex-scripts\BAFU_LUS_0250_2023a_' area '.mat']; 
